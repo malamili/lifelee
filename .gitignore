@@ -1,0 +1,22 @@
+# Compiled files
+bower_components
+node_modules
+dist
+tmp
+
+# Logs
+logs
+*.log
+
+# IntelliJ IDE
+.idea
+*.iml
+
+# OS X
+.DS_Store
+
+# Redis database
+*.rdb
+
+# Git Stats, see https://github.com/tomgi/git_stats
+git_stats

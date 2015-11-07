@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gruppo', cursive;
+  font-weight: 200;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important; }
+
+#facilities-list-view {
+  margin-top: 3em;
+  border: 0px solid; }
+
+.navbar > .navbar-form > .form-control {
+  -webkit-border-radius: 0 !important; }
+
+.nav-sidebar > .menu-item > a {
+  background-color: #D8D8D8 !important; }
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  text-align: center;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #428bca; }

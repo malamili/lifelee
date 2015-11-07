@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Meta information -->
+  <meta charset="utf-8">
+  <title>Lifelee</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo-sm.png">
+
+  <!-- Mobile settings-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='https://fonts.googleapis.com/css?family=Gruppo' rel='stylesheet' type='text/css'>
+
+  <!-- Includes all other less files through @import -->
+  <link href="weaver.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- LESS global settings (stripped during dist build) -->
+  <script in-production="false">
+    less = {logLevel: 1, async: true, fileAsync: true};
+  </script>
+
+  <!-- Automatic Bower dependencies updated by the grunt-wiredep task, just run 'grunt wire' after a bower install X - - save -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-bootstrap-contextmenu/contextMenu.js"></script>
+  <script src="bower_components/localforage/dist/localforage.js"></script>
+  <script src="bower_components/angular-localforage/dist/angular-localForage.js"></script>
+  <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+  <script src="bower_components/angular-deferred-bootstrap/angular-deferred-bootstrap.js"></script>
+  <script src="bower_components/angular-socket-io/socket.js"></script>
+  <script src="bower_components/angular-cache/dist/angular-cache.js"></script>
+  <script src="bower_components/zeroclipboard/dist/ZeroClipboard.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/pikaday/pikaday.js"></script>
+  <script src="bower_components/handsontable/dist/handsontable.js"></script>
+  <script src="bower_components/chronicle/chronicle.js"></script>
+  <script src="bower_components/fingerprintjs2/dist/fingerprint2.js"></script>
+  <script src="bower_components/bluebird/js/browser/bluebird.js"></script>
+  <script src="bower_components/mousetrap/mousetrap.js"></script>
+  <script src="bower_components/select2/dist/js/select2.js"></script>
+  <script src="bower_components/angularjs-slider/dist/rzslider.js"></script>
+  <script src="bower_components/ngstorage/ngStorage.js"></script>
+  <!-- endbower -->
+
+  <!-- Manual Bower dependencies that wiredep failed to wire -->
+  <script src="bower_components/socket.io-client/socket.io.js"></script>
+  <script src="bower_components/cuid/dist/browser-cuid.js"></script>
+  <script src="bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
+  <!---->
+
+  <!-- Remove to disable less compiling -->
+  <script in-production="false" src="bower_components/less.js/dist/less.js"></script>
+
+  <!-- Module: weaver -->
+  <script src="tmp/src/weaver.js"></script>
+  <!---->
+
+  <!-- Module: weaver.util -->
+  <script src="tmp/src/modules/util/util.js"></script>
+  <script src="tmp/src/modules/util/service/socket-service.js"></script>
+  <script src="tmp/src/modules/util/service/promise-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.auth -->
+  <script src="tmp/src/modules/auth/auth.js"></script>
+  <script src="tmp/src/modules/auth/service/auth-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.data -->
+  <script src="tmp/src/modules/data/data.js"></script>
+  <script src="tmp/src/modules/data/service/server-object-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.data.organization -->
+  <script src="tmp/src/modules/data/modules/organization/organization.js"></script>
+  <script src="tmp/src/modules/data/modules/organization/service/session-service.js"></script>
+  <script src="tmp/src/modules/data/modules/organization/service/organization-service.js"></script>
+  <script src="tmp/src/modules/data/modules/organization/service/user-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.data.building -->
+  <script src="tmp/src/modules/data/modules/building/building.js"></script>
+  <script src="tmp/src/modules/data/modules/building/service/building-service.js"></script>
+  <script src="tmp/src/modules/data/modules/building/service/space-service.js"></script>
+  <script src="tmp/src/modules/data/modules/building/service/sensor-service.js"></script>
+  <script src="tmp/src/modules/data/modules/building/service/measurement-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.data.workspace -->
+  <script src="tmp/src/modules/data/modules/workspace/workspace.js"></script>
+  <script src="tmp/src/modules/data/modules/workspace/service/workspace-service.js"></script>
+  <!---->
+
+  <!-- Module: weaver.ui -->
+  <script src="tmp/src/modules/ui/ui.js"></script>
+  <script src="tmp/src/modules/ui/directive/modal-draggable/modal-draggable.js"></script>
+  <script src="tmp/src/modules/ui/directive/mousetrap/weaver-mousetrap.js"></script>
+  <!---->
+
+  <!-- Module: weaver.ui.dashboard-->
+  <script src="tmp/src/modules/ui/modules/dashboard/dashboard.js"></script>
+  <script src="modules/ui/modules/dashboard/controllers.js"></script>
+  <!---->
+
+  <!-- Module: weaver.ui.sensors-->
+  <script src="tmp/src/modules/ui/modules/sensors/sensors.js"></script>
+  <!---->
+
+  <!-- Module: weaver.ui.landing-->
+  <script src="tmp/src/modules/ui/modules/landing/landing.js"></script>
+  <script src="tmp/src/modules/ui/modules/landing/directive/create-first-app/create-first-app.js"></script>
+  <script src="tmp/src/modules/ui/modules/landing/directive/time-of-day/time-of-day.js"></script>
+  <script src="tmp/src/modules/ui/modules/landing/directive/today/today.js"></script>
+  <!---->
+
+  <!-- Main file that bootstraps Angular (must be the last loaded script) -->
+  <script src="tmp/src/main.js"></script>
+
+  <!-- Anchor for the top ui.router template -->
+  <div class="full-height" ui-view></div>
+  </body>
+</html>

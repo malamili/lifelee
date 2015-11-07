@@ -1,0 +1,27 @@
+<div weaver-modal-draggable class="modal-header">
+  <button ng-click="$close()" type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+  <h4 class="modal-title">Your first app</h4>
+</div>
+
+<div class="modal-body">
+
+  <form class="form" novalidate>
+
+    <div class="form-group">
+      <label for="ruleName">Name:</label>
+      <input type="text" class="form-control" id="ruleName" ng-model="name"
+             required weaver-auto-focus weaver-focus-on="guideAction">
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="guide" ng-click="guideAction()"> Guide me with the 'Todo' example app
+      </label>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button ng-click="createApp(name, guide)" type="button" class="btn btn-primary" data-dismiss="modal">
+    <span>Create</span></button>
+</div>
