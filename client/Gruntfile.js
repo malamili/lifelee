@@ -156,7 +156,7 @@ module.exports = function (grunt) {
         options: {
         },
         files: {
-          'tmp/weaver.css': 'src/weaver.less'
+          'tmp/lifelee.css': 'src/lifelee.less'
         }
       }
     },
@@ -233,8 +233,8 @@ module.exports = function (grunt) {
         options: {
           remove: ['script','link[rel="stylesheet"]'],
           append: [
-            {selector:'body',html:'<script src="weaver.js"></script>'},
-            {selector:'head',html:'<link rel="stylesheet" href="weaver.css">'}
+            {selector:'body',html:'<script src="lifelee.js"></script>'},
+            {selector:'head',html:'<link rel="stylesheet" href="lifelee.css">'}
           ]
         },
         src:'src/index.html',
@@ -244,29 +244,29 @@ module.exports = function (grunt) {
 
     cssmin: {
       main: {
-        src:['tmp/weaver.css','<%= dom_munger.data.appcss %>'],
-        dest:'dist/weaver.css'
+        src:['tmp/lifelee.css','<%= dom_munger.data.appcss %>'],
+        dest:'dist/lifelee.css'
       }
     },
 
     concat: {
       main: {
         src: ['<%= dom_munger.data.appjs %>','<%= ngtemplates.main.dest %>'],
-        dest: 'tmp/weaver.js'
+        dest: 'tmp/lifelee.js'
       }
     },
 
     ngAnnotate: {
       main: {
-        src:'tmp/weaver.js',
-        dest: 'tmp/weaver.js'
+        src:'tmp/lifelee.js',
+        dest: 'tmp/lifelee.js'
       }
     },
 
     uglify: {
       main: {
-        src: 'tmp/weaver.js',
-        dest:'dist/weaver.js'
+        src: 'tmp/lifelee.js',
+        dest:'dist/lifelee.js'
       }
     },
 

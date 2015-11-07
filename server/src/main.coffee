@@ -28,8 +28,8 @@ port = config.get('server.port')
 server = http.listen(port, ->
 
   top      = '┌──────────────────────────────────────┐' .cyan
-  title    = '│ AECHack Helsinki: '                     .cyan
-  endTitle  =                         '              │' .cyan
+  title    = '│ Lifelee: '                              .cyan
+  endTitle  =                '                       │' .cyan
   ready    = '│ Ready to serve clients on port: '       .cyan
   endReady =                                       ' │' .cyan
   bottom   = '└──────────────────────────────────────┘' .cyan
