@@ -166,7 +166,9 @@ module.exports = function (grunt) {
       options: {
         tmplext: 'ng.html',
         customtags: [
-          'weaver-*'
+          'weaver-*',
+          'canvas',
+          'rzslider'
         ],
         customattrs: [
           // Weaver attributes and tags from weaver directive
@@ -186,7 +188,20 @@ module.exports = function (grunt) {
           'editable-text',
           'editable-textarea',
           'onaftersave',
-          'e-form'
+          'e-form',
+
+          // Canvas
+          'chart-data',
+          'chart-labels',
+          'chart-legend',
+          'chart-series',
+          'chart-click',
+
+          // Slider
+          'rz-slider-model',
+          'rz-slider-on-end',
+          'rz-slider-hide-limit-labels',
+          'rz-slider-ceil'
         ],
         reportpath: null
       },

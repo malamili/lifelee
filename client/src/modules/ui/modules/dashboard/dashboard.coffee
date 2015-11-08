@@ -16,7 +16,7 @@ angular.module 'weaver.ui.dashboard', [
 .controller 'DashboardCtrl', ($stateParams, $scope, $state, AUTH) ->
   $scope.data = [[]]
   $scope.labels = []
-  $scope.series = ['Sensor CO2'];
+  $scope.series = ['Sensor CO2']
   #$scope.sensor = {}
 
 
