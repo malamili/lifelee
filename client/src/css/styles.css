@@ -1,11 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Gruppo', cursive;
-  font-weight: 200;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important; }
+/** {*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  /*font-family: 'Gruppo', cursive;*/
+  /*font-weight: 200;*/
+  /*-webkit-border-radius: 0 !important;*/
+  /*-moz-border-radius: 0 !important;*/
+  /*border-radius: 0 !important; }*/
 
 #facilities-list-view {
   margin-top: 3em;

@@ -93,6 +93,7 @@ angular.module 'weaver.data'
       listenAdd = ->
         Socket.on(self.getIdentifier()+ ':' + self.id + ':' +key+ ':added').then((object) ->
           self.objects[key].push(new Type(object))
+          self.added(new Type(object), key)
           listenAdd()
         )
 
@@ -140,6 +141,10 @@ angular.module 'weaver.data'
       object.getId().bind(@).then((objectId) ->
         @emit(@getIdentifier()+ ':add', {key, objectId})
       )
+
+    # Handle for subtype to act on event
+    added: (object, key) ->
+      return
 
     remove: (object, key) ->
       @objects[key].splice(@objects[key].indexOf(object), 1)

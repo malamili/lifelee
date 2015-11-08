@@ -35,10 +35,17 @@ angular.module 'weaver.ui.landing', [
       space.create()
       building.add(space, 'spaces')
 
-      sensor = new Sensor({name: 'Sensor CO2'})
-      sensor.create()
+      sensor = new Sensor({name: 'Sensor CO2 Live', live: true})
       space.add(sensor, 'sensors')
+      sensor.create()
 
+      sensor2 = new Sensor({name: 'Sensor CO2'})
+      sensor2.create()
+      space.add(sensor2, 'sensors')
+
+      measurement = new Measurement({value: '150'})
+      measurement.create()
+      sensor2.add(measurement, 'measurements')
 
       sensor = new Sensor({name: 'Sensor Occupancy'})
       sensor.create()

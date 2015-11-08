@@ -14,15 +14,6 @@ angular.module 'weaver.ui.sensors', [
 
 .controller 'SensorsCtrl', ($stateParams, $scope, $state, AUTH, Measurement) ->
 
-  # Initialize sensors
-  $scope.sensor1 = 150;
-  $scope.sensor2 = 150;
-  $scope.sensor3 = 150;
-  $scope.sensor4 = 150;
-  $scope.sensor5 = 150;
-
-  $scope.measurements = {}
-
   # Load
   AUTH.user.promise('workspaces').then((workspaces) ->
     $scope.workspace = workspaces[0]
