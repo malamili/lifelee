@@ -26,12 +26,12 @@ angular.module 'weaver.ui.landing', [
       workspace.create()
       user.add(workspace, 'workspaces')
 
-      # Bootstrap buildings
-      building = new Building({name: 'Kindergarden Espoo'})
+# Bootstrap buildings
+      building = new Building({name: 'Päiväkoti Hansa'})
       building.create()
       workspace.add(building, 'buildings')
 
-      space = new Space({name: 'Room 101'})
+      space = new Space({name: 'Room 1'})
       space.create()
       building.add(space, 'spaces')
 
@@ -39,35 +39,147 @@ angular.module 'weaver.ui.landing', [
       space.add(sensor, 'sensors')
       sensor.create()
 
-      sensor2 = new Sensor({name: 'Sensor CO2'})
-      sensor2.create()
-      space.add(sensor2, 'sensors')
+      space = new Space({name: 'Room 2'})
+      space.create()
+      building.add(space, 'spaces')
 
-      measurement = new Measurement({value: '150'})
-      measurement.create()
-      sensor2.add(measurement, 'measurements')
-
-      sensor = new Sensor({name: 'Sensor Occupancy'})
-      sensor.create()
+      sensor = new Sensor({name: 'Sensor CO2'})
       space.add(sensor, 'sensors')
+      sensor.create()
 
-      measurement = new Measurement({value: '297'})
+      measurement = new Measurement({value: '200'})
       measurement.create()
       sensor.add(measurement, 'measurements')
 
 
+      space = new Space({name: 'Room 3'})
+      space.create()
+      building.add(space, 'spaces')
 
-      building = new Building({name: 'Kindergarden #2'})
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '450'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+      space = new Space({name: 'Room 4'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '350'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      space = new Space({name: 'Room 5'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '400'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      space = new Space({name: 'Room 6'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '900'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      space = new Space({name: 'Room 7'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '500'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+      space = new Space({name: 'Room 8'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '600'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      building = new Building({name: 'Tapiolan Koulu'})
       building.create()
       workspace.add(building, 'buildings')
 
-      building = new Building({name: 'Kindergarden #3'})
-      building.create()
-      workspace.add(building, 'buildings')
+      space = new Space({name: 'Room 1'})
+      space.create()
+      building.add(space, 'spaces')
 
-      building = new Building({name: 'Kindergarden #4'})
-      building.create()
-      workspace.add(building, 'buildings')
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '200'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+      space = new Space({name: 'Room 2'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '400'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      space = new Space({name: 'Room 3'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '450'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+      space = new Space({name: 'Room 4'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '1000'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
 
       user.set('lastPath', 'dashboard')
       $state.go('dashboard')
