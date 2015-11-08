@@ -1,35 +1,127 @@
-<div style="margin:20px">
-<h4>Dashboard</h4>
+<div id="page-top">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" style="
+    background: #DADADA;
+    color: black;
+">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top" style="color: black">Lifelee</a>
+      </div>
 
-
-<ul>
-  <li ng-repeat="building in workspace.objects.buildings">
-    {{building.values.name}}
-    <ul>
-      <li ng-repeat="space in building.objects.spaces">
-        {{space.values.name}}
-        <ul>
-          <li ng-repeat="sensor in space.objects.sensors">
-            {{sensor.values.name}}
-            <ul>
-              <li ng-repeat="measurement in sensor.objects.measurements">
-              {{measurement.values.value}}
-            </ul>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ville
+                <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Open Recents</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Help</a>
           </li>
         </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <table class="table">
+        <tr style="height:500px">
+          <td style="width: 200px; padding-top: 50px">
+
+            <p class="btn btn-default" ng-class="{'active': isActive(building)}" ng-click="activate(building)" ng-repeat="building in workspace.objects.buildings">{{building.values.name}}</p>
+
+          </td>
+          <!--<td id="description" style="width: 300px; padding-top: 70px; background-color: grey; color: white">-->
+            <!--<div style="font-weight: 500;">Kinder Garden 1</div>-->
+            <!--<br>-->
+            <!--<div>Address</div>-->
+            <!--<div>Number of sensor:</div>-->
+            <!--<br>-->
+            <!--<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et-->
+              <!--dolore magna aliqua. Ut enim ad minim venia-->
+            <!--</div>-->
+          <!--</td>-->
+          <td style="padding-right: 50px">
+            <div>
+
+              <img style="position: absolute;" src="img/{{selectedBuilding.values.map}}/{{selectedBuilding.values.map}}.png"/>
 
 
-<!--  Chart test -->
-<canvas id="line" class="chart chart-line" chart-data="data"
-        chart-labels="labels" chart-legend="true" chart-series="series"
-        chart-click="onClick" >
-</canvas>
+              <img ng-repeat="space in selectedBuilding.objects.spaces"
+                   style="position: absolute;"
+                   ng-click="selectSensor(space)"
+                   ng-src="img/{{selectedBuilding.values.map}}/{{space.objects.sensors[0].color}}/{{space.values.map}}"/>
 
-  <a href="#sensors" target="_blank" role="button">Sensors</a>
+
+
+              <!--<img style="position: absolute;" src="img/plan1/plan1.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/red/_0000_classroom1.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0003_classroom2.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0001_storeroom.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0008_kitchen.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0004_laundry.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/orange/_0002_office.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0005_RR1.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/red/_0006_RR2.png"/>-->
+              <!--<img style="position: absolute;" src="img/plan1/green/_0007_RR3.png"/>-->
+            </div>
+
+            <!--<iframe id="map" src="https://mapsengine.google.com/map/embed?mid=zPx6JuArmKI8.kBdSHY3sIaVg" width="640" height="480"></iframe>-->
+          </td>
+          <td>
+            <img style="float: right; width: 400px; height: auto; margin-right: -50px; padding-top: 50px" src="img/info.jpg"/>
+          </td>
+
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <select ng-show="selectedBuilding.objects.spaces.length != 0"
+                    ng-model="selectedSpace" class="form-control"
+                    ng-change="selectSensor(selectedSpace)"
+                    ng-options="space.values.name for space in selectedBuilding.objects.spaces"></select>
+
+            <p>Space: {{space.values.name}}, {{sensor.values.name}}</p>
+            <div style="height:100px">
+            <canvas id="line" class="chart chart-line chart-style" chart-data="data"
+                    chart-labels="labels" chart-legend="true" chart-series="series"
+                    chart-click="onClick" >
+            </canvas>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </section>
+</div>
+
+<a href="#sensors" target="_blank" role="button">Sensors</a>
 <br>
 <a ng-click="signout()">Exit</a>
-</div>

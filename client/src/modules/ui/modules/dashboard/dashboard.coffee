@@ -23,8 +23,12 @@ angular.module 'weaver.ui.dashboard', [
   # Load
   AUTH.user.promise('workspaces').then((workspaces) ->
     $scope.workspace = workspaces[0]
-    $scope.sensor = $scope.workspace.objects.buildings[0].objects.spaces[0].objects.sensors[1]
-    console.log($scope.sensor)
+    $scope.selectedBuilding = $scope.workspace.objects.buildings[0]
+    $scope.space  = $scope.workspace.objects.buildings[0].objects.spaces[0]
+    $scope.sensor = $scope.space.objects.sensors[0]
+
+    $scope.selectedSpace = $scope.space
+
     $scope.data[0] = $scope.sensor.measurementValues
     $scope.labels  = $scope.sensor.measurementIntervals
   )
@@ -32,6 +36,20 @@ angular.module 'weaver.ui.dashboard', [
   $scope.onClick = (points, evt) ->
     console.log(points, evt)
 
+
+  $scope.selectSensor = (space) ->
+    $scope.sensor = space.objects.sensors[0]
+    $scope.space = space
+    $scope.data[0] = $scope.sensor.measurementValues
+    $scope.labels  = $scope.sensor.measurementIntervals
+
+    #console.log(space)
+
+  $scope.activate = (building) ->
+    $scope.selectedBuilding = building
+
+  $scope.isActive = (building) ->
+    $scope.selectedBuilding is building
 
   $scope.signout = ->
     AUTH.signout()

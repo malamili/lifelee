@@ -19,6 +19,13 @@ angular.module 'weaver.data.building'
       @measurementValues    = (parseInt(measurement.values.value) for measurement in @objects.measurements)
       @measurementIntervals = (measurement.id for measurement in @objects.measurements)
 
+      if @lastMeasurement  > 2500
+        @color =  'red'
+      else if @lastMeasurement < 2500 and @lastMeasurement > 500
+        @color =   'orange'
+      else
+        @color =   'green'
+
     getIdentifier: ->
       'sensor'
 
@@ -27,8 +34,18 @@ angular.module 'weaver.data.building'
 
     added: (object, key) ->
       if key is 'measurements'
+        @lastMeasurement = @objects.measurements[@objects.measurements.length - 1].values.value
         @measurementValues.push(parseInt(object.values.value))
         @measurementIntervals.push(object.id)
+
+        if @lastMeasurement  > 2500
+          @color =  'red'
+        else if @lastMeasurement < 2500 and @lastMeasurement > 500
+          @color =   'orange'
+        else
+          @color =   'green'
+
+
 
     getMeasurementValues: ->
       (parseInt(measurement.values.value) for measurement in @objects.measurements)

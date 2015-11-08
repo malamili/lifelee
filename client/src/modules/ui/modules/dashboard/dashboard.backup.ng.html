@@ -1,0 +1,35 @@
+<div style="margin:20px">
+<h4>Dashboard</h4>
+
+
+<ul>
+  <li ng-repeat="building in workspace.objects.buildings">
+    {{building.values.name}}
+    <ul>
+      <li ng-repeat="space in building.objects.spaces">
+        {{space.values.name}}
+        <ul>
+          <li ng-repeat="sensor in space.objects.sensors">
+            {{sensor.values.name}}
+            <ul>
+              <li ng-repeat="measurement in sensor.objects.measurements">
+              {{measurement.values.value}}
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+<!--  Chart test -->
+<canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-legend="true" chart-series="series"
+        chart-click="onClick" >
+</canvas>
+
+  <a href="#sensors" target="_blank" role="button">Sensors</a>
+<br>
+<a ng-click="signout()">Exit</a>
+</div>

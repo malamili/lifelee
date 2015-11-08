@@ -27,11 +27,11 @@ angular.module 'weaver.ui.landing', [
       user.add(workspace, 'workspaces')
 
 # Bootstrap buildings
-      building = new Building({name: 'Päiväkoti Hansa'})
+      building = new Building({name: 'Päiväkoti Hansa', map: 'plan1'})
       building.create()
       workspace.add(building, 'buildings')
 
-      space = new Space({name: 'Room 1'})
+      space = new Space({name: 'Classroom 1', map: '_0000_classroom1.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -39,7 +39,7 @@ angular.module 'weaver.ui.landing', [
       space.add(sensor, 'sensors')
       sensor.create()
 
-      space = new Space({name: 'Room 2'})
+      space = new Space({name: 'Classroom 2', map: '_0003_classroom2.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -52,7 +52,7 @@ angular.module 'weaver.ui.landing', [
       sensor.add(measurement, 'measurements')
 
 
-      space = new Space({name: 'Room 3'})
+      space = new Space({name: 'Store Room', map: '_0001_storeroom.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -64,7 +64,7 @@ angular.module 'weaver.ui.landing', [
       measurement.create()
       sensor.add(measurement, 'measurements')
 
-      space = new Space({name: 'Room 4'})
+      space = new Space({name: 'Kitchen', map: '_0008_kitchen.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -77,7 +77,7 @@ angular.module 'weaver.ui.landing', [
       sensor.add(measurement, 'measurements')
 
 
-      space = new Space({name: 'Room 5'})
+      space = new Space({name: 'Laundry', map: '_0004_laundry.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -90,7 +90,7 @@ angular.module 'weaver.ui.landing', [
       sensor.add(measurement, 'measurements')
 
 
-      space = new Space({name: 'Room 6'})
+      space = new Space({name: 'Office', map: '_0002_office.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -103,7 +103,7 @@ angular.module 'weaver.ui.landing', [
       sensor.add(measurement, 'measurements')
 
 
-      space = new Space({name: 'Room 7'})
+      space = new Space({name: 'Restroom 1', map: '_0005_RR1.png'})
       space.create()
       building.add(space, 'spaces')
 
@@ -115,7 +115,20 @@ angular.module 'weaver.ui.landing', [
       measurement.create()
       sensor.add(measurement, 'measurements')
 
-      space = new Space({name: 'Room 8'})
+      space = new Space({name: 'Restroom 2', map: '_0006_RR2.png'})
+      space.create()
+      building.add(space, 'spaces')
+
+      sensor = new Sensor({name: 'Sensor CO2'})
+      space.add(sensor, 'sensors')
+      sensor.create()
+
+      measurement = new Measurement({value: '600'})
+      measurement.create()
+      sensor.add(measurement, 'measurements')
+
+
+      space = new Space({name: 'Restroom 3', map: '_0007_RR3.png'})
       space.create()
       building.add(space, 'spaces')
 
